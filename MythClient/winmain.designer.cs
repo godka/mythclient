@@ -1,0 +1,96 @@
+namespace MythClient
+{
+    partial class winmain
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            this.components = new System.ComponentModel.Container();
+            this.styleManager1 = new DevComponents.DotNetBar.StyleManager(this.components);
+            this.highlighter1 = new DevComponents.DotNetBar.Validator.Highlighter();
+            this.treeView1 = new System.Windows.Forms.TreeView();
+            this.mainControl1 = new MythAvPlayer.MainControl();
+            this.SuspendLayout();
+            // 
+            // styleManager1
+            // 
+            this.styleManager1.ManagerColorTint = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.styleManager1.ManagerStyle = DevComponents.DotNetBar.eStyle.Metro;
+            this.styleManager1.MetroColorParameters = new DevComponents.DotNetBar.Metro.ColorTables.MetroColorGeneratorParameters(System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255))))), System.Drawing.Color.FromArgb(((int)(((byte)(106)))), ((int)(((byte)(56)))), ((int)(((byte)(137))))));
+            // 
+            // highlighter1
+            // 
+            this.highlighter1.ContainerControl = this;
+            // 
+            // treeView1
+            // 
+            this.treeView1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.treeView1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.treeView1.ForeColor = System.Drawing.Color.Black;
+            this.treeView1.Location = new System.Drawing.Point(0, 0);
+            this.treeView1.Name = "treeView1";
+            this.treeView1.Size = new System.Drawing.Size(188, 704);
+            this.treeView1.TabIndex = 0;
+            this.treeView1.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterSelect);
+            this.treeView1.Click += new System.EventHandler(this.treeView1_Click);
+            // 
+            // mainControl1
+            // 
+            this.mainControl1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.mainControl1.Cameraid = 0;
+            this.mainControl1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.mainControl1.ForeColor = System.Drawing.Color.Black;
+            this.mainControl1.IP = null;
+            this.mainControl1.Location = new System.Drawing.Point(197, 0);
+            this.mainControl1.Name = "mainControl1";
+            this.mainControl1.Port = 0;
+            this.mainControl1.Size = new System.Drawing.Size(987, 704);
+            this.mainControl1.TabIndex = 1;
+            // 
+            // winmain
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(1184, 704);
+            this.Controls.Add(this.mainControl1);
+            this.Controls.Add(this.treeView1);
+            this.DoubleBuffered = true;
+            this.Name = "winmain";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "ÊÓÆµ¼à¿ØÏµÍ³";
+            this.Load += new System.EventHandler(this.winmain_Load);
+            this.ResumeLayout(false);
+
+        }
+
+        #endregion
+
+        private DevComponents.DotNetBar.StyleManager styleManager1;
+        private DevComponents.DotNetBar.Validator.Highlighter highlighter1;
+        private System.Windows.Forms.TreeView treeView1;
+        private MythAvPlayer.MainControl mainControl1;
+    }
+}
