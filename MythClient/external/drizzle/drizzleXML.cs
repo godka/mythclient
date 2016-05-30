@@ -14,12 +14,32 @@ namespace drizzle
             mip = ip;
             mport = port;
         }
-        public void connect()
+        private void connect()
         {
             client = new drizzleTCP.Client(mip, mport);
             //client.ClientEventArrive += client_ClientEventArrive;
         }
-
+        public List<int> SendIDRequest()
+        {
+            List<int> ret = new List<int>();
+            connect();
+            string str = "GET /list  HTTP/1.0\r\n\r\n";
+            string retstr = client.sendmessageNoAsync(str);
+            var spstr = retstr.Split(':');
+            if (spstr.Length > 1)
+            {
+                var tmpret = spstr[1].Split(';');
+                foreach (var t in tmpret)
+                {
+                    int intt;
+                    if (int.TryParse(t, out intt))
+                    {
+                        ret.Add(intt);
+                    }
+                }
+            }
+            return ret;
+        }
         public drizzleXMLReader SendRequest(string sqlrequest)
         {
             connect();

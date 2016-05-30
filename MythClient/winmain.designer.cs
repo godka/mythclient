@@ -31,8 +31,9 @@ namespace MythClient
             this.components = new System.ComponentModel.Container();
             this.styleManager1 = new DevComponents.DotNetBar.StyleManager(this.components);
             this.highlighter1 = new DevComponents.DotNetBar.Validator.Highlighter();
-            this.treeView1 = new System.Windows.Forms.TreeView();
             this.mainControl1 = new MythAvPlayer.MainControl();
+            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
             // styleManager1
@@ -45,38 +46,43 @@ namespace MythClient
             // 
             this.highlighter1.ContainerControl = this;
             // 
-            // treeView1
-            // 
-            this.treeView1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.treeView1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.treeView1.ForeColor = System.Drawing.Color.Black;
-            this.treeView1.Location = new System.Drawing.Point(0, 0);
-            this.treeView1.Name = "treeView1";
-            this.treeView1.Size = new System.Drawing.Size(188, 704);
-            this.treeView1.TabIndex = 0;
-            this.treeView1.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterSelect);
-            this.treeView1.Click += new System.EventHandler(this.treeView1_Click);
-            // 
             // mainControl1
             // 
             this.mainControl1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.mainControl1.Cameraid = 0;
-            this.mainControl1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.mainControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.mainControl1.ForeColor = System.Drawing.Color.Black;
             this.mainControl1.IP = null;
-            this.mainControl1.Location = new System.Drawing.Point(197, 0);
+            this.mainControl1.Location = new System.Drawing.Point(0, 0);
             this.mainControl1.Name = "mainControl1";
             this.mainControl1.Port = 0;
-            this.mainControl1.Size = new System.Drawing.Size(987, 704);
+            this.mainControl1.Size = new System.Drawing.Size(1184, 704);
             this.mainControl1.TabIndex = 1;
+            // 
+            // listBox1
+            // 
+            this.listBox1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.ItemHeight = 12;
+            this.listBox1.Location = new System.Drawing.Point(0, 0);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(172, 704);
+            this.listBox1.TabIndex = 2;
+            this.listBox1.Click += new System.EventHandler(this.listBox1_Click);
+            // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Interval = 1000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // winmain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1184, 704);
+            this.Controls.Add(this.listBox1);
             this.Controls.Add(this.mainControl1);
-            this.Controls.Add(this.treeView1);
             this.DoubleBuffered = true;
             this.Name = "winmain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -90,7 +96,8 @@ namespace MythClient
 
         private DevComponents.DotNetBar.StyleManager styleManager1;
         private DevComponents.DotNetBar.Validator.Highlighter highlighter1;
-        private System.Windows.Forms.TreeView treeView1;
         private MythAvPlayer.MainControl mainControl1;
+        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.Timer timer1;
     }
 }
