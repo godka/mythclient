@@ -26,6 +26,7 @@ namespace MythClient
         }
         private void login_Load(object sender, EventArgs e)
         {
+            textBoxX2.Text = "121.42.136.168";
            // this.mainControl1.Play();
         }
     }
